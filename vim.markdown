@@ -216,19 +216,62 @@
 
 ### The .vim architecture
 
+* .vim/autoload: automatically loaded functions
+* .vim/plugin: general purpose plugins
+* .vim/ftplugin: filetype specific plugins
+* .vim/ftdetect: filetype detection scripts
+* .vim/colors: colorschemes
+* .vim/syntax: syntax highlighting files
+* .vim/after: scripts guaranteed to be run after the others
+
 ## The absolute minimum
 
 ### It's dangerous to go alone, take this!
+
+```vim
+set nocompatible
+syntax on
+filetype plugin indent on
+set backspace=2
+```
 
 ## The tabs vs spaces holy war
 
 ### Disclaimer
 
+* Both choices are valid ones
+* Some languages give you the choice (C, php...)
+* Some languages made that choice for you (make, python, go...)
+* The important thing is to be consistent across a team
+
 ### General considerations
+
+* expandtab: whether a '\t' or spaces are inserted upon pressing the Tab key
+* tabstop: length of the '\t' character (default 8)
+* softtabstop: amount of spaces inserted when pressing Tab (default 0)
+* shiftwidth: level of indentation (default 8)
+* softtabstop and shiftwidth can differ, although that is not desirable
+* **Never** set tabstop != 8
 
 ### Way of the space
 
+```vim
+set expandtab
+set tabstop=8
+set softtabstop=n
+set shiftwidth=n
+```
+
+With n being the value you desire (I personally like 4)
+
 ### Church of the Holy Tab
+
+```vim
+set noexpandtab
+set tabstop=8
+set softtabstop=0
+set shiftwidth=8
+```
 
 ## Mappings
 
