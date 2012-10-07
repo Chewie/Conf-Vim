@@ -7,17 +7,46 @@
 
 ### In the beginning: vi
 
+        * Written by Bill Joy in 1976
+        * Based on the _visual_ command of ex
+        * Part of the _Single UNIX Specification_
+        * Several modern vi clones exist nowadays
+        * nvi, Elvis, svicc, bvi, VILE..
+
 ### Vi iMproved
+
+        * (Arguably) the most popular clone is Vim
+        * Charityware written by Bram Moolenaar in 1991
+        * Almost 100% compatible with vi
+        * Used as vi implementation in most Linux distributions
 
 ## Design and principles
 
 ### What vim is
 
+        * Vim is a text editor
+        * Vim excels in writing and manipulating text
+        * Vim is designed to be ergonomic
+
 ### What vim is not
+
+        * Vim is not betraying the UNIX philosophy!
+        * Vim is not an IDE : no debugger or shell integration
+        * The shell is just a ctrl-z away
+        * See :help design-not
 
 ### A modal editor
 
+        * Vim has 6 different modes
+        * Only one of them is about inserting text
+        * Most of your time will be spent in the normal mode
+
 ### Commands form a language
+
+        * [operator][count][motion]
+        * All operators work with the same motions
+        * Understanding the command language makes learning easier
+        * Examples: "delete a word" is daw, "copy inside quotes" is yi'
 
 # The basics
 
@@ -25,15 +54,48 @@
 
 ### Relative movement
 
+        * Forget arrow keys
+        * Character wise: hjkl
+        * word wise: web and WEB
+        * Beginning and end of lines: 0, ^ and $
+        * Up and down half a page: ^u and ^d
+        * First and last line: gg and G
+
 ### Cursor positionning
+
+        * Top, Middle and Bottom of the screen: HML
+        * Align cursor to top, mid or bottom: zt, zz, zb
 
 ## Modifying text
 
 ### Entering insert mode
 
+        * Entering insert mode before or after the cursor: i and a
+        * At beginning or end of line: I and A
+        * Next and previous line: o and O
+        * Change operator leaves you in insert mode
+
 ### Three basics operators
 
+        * Delete operator: d
+        * Change operator: c
+        * Copy (yank) operator: y
+        * Several other operators: v,=,~,g?...
+
+### Motions
+
+        * Regular movement
+        * Text objects: words, sentences, [] blocks...
+        * Marks
+        * Searches
+
 ### Text objects
+
+        * Prefixed with a or i for "around" and "inner"
+        * words and sentences: w,W,s
+        * Blocks: (,[,<,{,",'
+        * XML tags: t
+        * b and B are shorthands for ( and {
 
 ## Working with multiple files
 
