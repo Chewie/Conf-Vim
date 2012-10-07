@@ -115,7 +115,8 @@
 * Delete a buffer: :bd(elete)
 * List all buffers: :ls
 * Previous and next buffer: :bp(rev) and :bn(ext)
-* Go to nth buffer: :b{1,2,3...}
+* Switch to buffer containing file *foo*: :b foo (autocompletion works)
+* Switch to nth buffer: :b{1,2,3...}
 
 ### Managing windows
 
@@ -285,7 +286,7 @@ set shiftwidth=8
 ### The leader key
 
 * The leader key is a key left for personnal mappings
-* By default the leader key is \
+* By default the leader key is `"\"`
 * you can remap it with `let mapleader = "X"` (I like ",")
 
 ### Several map commands
