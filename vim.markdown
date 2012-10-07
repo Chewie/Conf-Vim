@@ -140,29 +140,75 @@
 ### The search options
 
 * Forward and backward search with / and ?
+* Search for word cursor with * and #
 * next and previous occurence with n and N
+* Go to specific character on a line with f and F
+* Go just before (unTil) that character with t and T
 
 ### The almighty sed
+
+* Arguably the most powerful command in vim
+* :s/<regexp>/<replacement>/[options]
+* The / separator is arbitrary, you can choose something else
+* The g option allows multiple substitutions on a given line
+* As a global command, it works on ranges (eg :%s for the whole file)
 
 ## Macros
 
 ### What are macros
 
+* Macros are sets of commands recorded to a register
+* A great way to repeat a complex task multiple times
+
 ### Registering and running macros
+
+* Start recording with q followed by the name of the register (any letter)
+* Perform your actions as usual, while they are recorded
+* Stop recording with q
+* Execute a macro with @ followed by the name of the register
+* Example : `qaddq` stores the macro to delete a line in register a
+* You can then run it with [count]@a
 
 ## Global commands
 
 ### Syntax
 
+* :[range]g/<regexp>/<command>
+* Executes the Ex command <command> on every line matching regexp in the range
+  (whole file by default)
+* :v or :g! executes the command for lines *not* matching the pattern
+
 ### A few examples
+
+* Delete all blank lines: `:g/^\s*$/d`
+* Add bar to end of lines beginning with foo: `:g/^foo/s/$/bar/
+* Run a macro on matching lines: `:g/<pattern>/normal @q
 
 ## Auto completion
 
 ### Different kinds of completions
 
+* Whole lines: ^x ^l
+* Words in the current files: ^x ^n
+* Tags: ^x ^]
+* File names: ^x ^f
+* Omni completion: ^x ^o
+* Switch to next and previous suggestions with ^n and ^p
+
 ### Omnicompletion and tags
 
+* New since Vim 7.0
+* Syntax aware completion for programming languages
+* Works out of the box for some languages (python, ruby...)
+* Needs a tags file for others (php, C, C++...)
+
 ### Fun with tags
+
+* Even if you don't use completion, having a tags file is useful
+* Use ctags program to generate tags file for a project : `ctags -R`
+* Jump to definition of function *foo* : :tag foo
+* Call tag on word under cursor: ^]
+* Go to previous jump point: ^t
 
 # Configuring vim
 
