@@ -74,6 +74,7 @@
 * At beginning or end of line: I and A
 * Next and previous line: o and O
 * Change operator leaves you in insert mode
+* Leave insert mode for normal mode: Esc (rebind it to Caps Lock)
 
 ### Three basics operators
 
@@ -101,17 +102,45 @@
 
 ### Buffers, windows, tabs
 
+* A buffer is an *instance of a file*
+* A window is a *view on a buffer*
+* A buffer can be viewed by multiple windows at the same time
+* A tab is a *collection of windows*
+* See :help windows
+
 ### Switching buffers
+
+* Don't forget to :set hidden
+* open a new buffer: :e(dit)
+* Delete a buffer: :bd(elete)
+* List all buffers: :ls
+* Previous and next buffer: :bp(rev) and :bn(ext)
+* Go to nth buffer: :b{1,2,3...}
 
 ### Managing windows
 
+* Windows commands begin with ^w
+* Split horizontally or vertically with ^w s and ^w v
+* Change active window with ^w hjkl
+* Close window with ^w c
+
 ### A word on tabs
+
+* Tabs in vim are not like any other text editors!
+* New since Vim 7.0
+* Create a tab with :tabe(dit)
+* Switch between tabs with gt and gT
+* Close tab with :tabc(lose)
+* As always, see :help tabpage
 
 # Advanced vimming
 
 ## Search and replace
 
 ### The search options
+
+* Forward and backward search with / and ?
+* next and previous occurence with n and N
 
 ### The almighty sed
 
