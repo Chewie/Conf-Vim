@@ -148,7 +148,7 @@
 ### The almighty sed
 
 * Arguably the most powerful command in vim
-* :s/<regexp>/<replacement>/[options]
+* `:s/<regexp>/<replacement>/[options]`
 * The / separator is arbitrary, you can choose something else
 * The g option allows multiple substitutions on a given line
 * As a global command, it works on ranges (eg :%s for the whole file)
@@ -173,8 +173,8 @@
 
 ### Syntax
 
-* :[range]g/<regexp>/<command>
-* Executes the Ex command <command> on every line matching regexp in the range
+* `:[range]g/<regexp>/<command>`
+* Executes the Ex command `<command>` on every line matching regexp in the range
   (whole file by default)
 * :v or :g! executes the command for lines *not* matching the pattern
 
@@ -182,7 +182,7 @@
 
 * Delete all blank lines: `:g/^\s*$/d`
 * Add bar to end of lines beginning with foo: `:g/^foo/s/$/bar/
-* Run a macro on matching lines: `:g/<pattern>/normal @q
+* Run a macro on matching lines: `:g/<pattern>/normal @q`
 
 ## Auto completion
 
@@ -205,7 +205,7 @@
 ### Fun with tags
 
 * Even if you don't use completion, having a tags file is useful
-* Use ctags program to generate tags file for a project : `ctags -R`
+* Use ctags program to generate tags file: `ctags -R`
 * Jump to definition of function *foo* : :tag foo
 * Call tag on word under cursor: ^]
 * Go to previous jump point: ^t
