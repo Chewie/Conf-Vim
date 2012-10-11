@@ -1,5 +1,5 @@
 % Ergonomic editing with vim
-% Kévin "Chewie" Sztern
+% Kévin "Chewie" Sztern and Théophile "yroeht" Ranquet
 
 # The philosophy of vim
 
@@ -37,7 +37,7 @@
 
 ### A modal editor
 
-* Vim has 6 different modes
+* Vim has 6 different major modes
 * Only one of them is about inserting text
 * Most of your time will be spent in the normal mode
 
@@ -152,7 +152,7 @@
 * `:s/<regexp>/<replacement>/[options]`
 * The / separator is arbitrary, you can choose something else
 * The g option allows multiple substitutions on a given line
-* As a global command, it works on ranges (eg :%s for the whole file)
+* As every Ex command, it works on ranges (eg :%s for the whole file)
 
 ## Macros
 
@@ -183,7 +183,8 @@
 
 * Delete all blank lines: `:g/^\s*$/d`
 * Add bar to end of lines beginning with foo: `:g/^foo/s/$/bar/
-* Run a macro on matching lines: `:g/<pattern>/normal @q`
+* Run a macro on matching lines: `:g/<regexp>/normal @q`
+* Print every line matching a pattern: `:g/<RegExp>/p`
 
 ## Auto completion
 
@@ -319,7 +320,7 @@ set shiftwidth=8
 
 * Give the feel of another editor
 * Awful plugins with insert mode mappings and horrendous startup times
-* Run away from those plugins
+* Be wary of such plugins
 
 ### Extend vim's core
 
